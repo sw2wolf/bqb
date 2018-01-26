@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\pagestyle{empty}
+\pagecolor{white}
+\immediate\write18{pdflatex tri.tex}
+\immediate\write18{convert -density 100 -adaptive-resize 480x480 tri.pdf tri.jpg}
+\everymath{\displaystyle}
+\begin{document}
+\begin{minipage}[b][14cm][t]{1.00\textwidth}
+\begin{center}\textcolor{red}{\huge{Triangle Function Formula}}\end{center}
+\begin{Large}\begin{align*}
+1&.\sin^2\alpha+\cos^2\alpha = 1\hspace{1cm}\tan\alpha=\frac{\sin\alpha}{\cos\alpha}\\
+2&.\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta\\
+3&.\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta\\
+4&.\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\beta}{1\mp\tan\alpha\tan\beta}\\
+\rightarrow\\
+&.\sin2\alpha=2\sin\alpha\cos\alpha\hspace{1cm}\textcolor{blue}{(double\hspace{3pt}angle)}\\
+&.\cos2\alpha=\cos^2\alpha-\sin^2\alpha=2\cos^2\alpha-1=1-2\sin^2\alpha\\
+&.\sin^2\frac{\alpha}{2}=\frac{1-\cos\alpha}{2}\hspace{1cm}\cos^2\frac{\alpha}{2}=\frac{1+\cos\alpha}{2}\hspace{10pt}\textcolor{blue}{(half\hspace{3pt}angle)}\\
+5&.\frac{a}{\sin{A}}=\frac{b}{\sin{B}}=\frac{c}{\sin{C}}=2R\hspace{1cm}\textcolor{blue}{(sine\hspace{3pt}theorm)}\\
+6&.c^2=a^2+b^2-2ab\cos{C}\hspace{10pt}a^2=b^2+c^2-2bc\cos{A}\\
+ &.b^2=a^2+c^2-2ac\cos{B}\hspace{10pt}\textcolor{blue}{(cosine\hspace{3pt}theorm)}\\
+7&.S_{\Delta{ABC}}=\frac{1}{2}ab\sin{C}=\frac{1}{2}ac\sin{B}=\frac{1}{2}bc\sin{A}
+\end{align*}\end{Large}
+\end{minipage}
+\end{document}
+

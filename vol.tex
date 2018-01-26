@@ -1,0 +1,90 @@
+%pdflatex -shell-escape vol.tex 
+\input{header}
+\immediate\write18{pdflatex vol.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 vol.pdf vol.jpg}
+%
+\newcommand{\XB}[1]{\text{\zh{#1}}}
+\newcommand{\BT}[1]{\color{red}\zh{#1}}
+% 
+\usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{math}
+\usepackage{ifthen}
+\newcounter{count}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{1.00\textwidth}
+%
+\begin{table}[]
+\centering
+\caption{Surface area and Volume}
+\begin{tabular}{|c|l|l|}
+\hline
+\BT{几何体} & \multicolumn{1}{c}{\BT{表面积}} & \multicolumn{1}{c}{\BT{体积}} \\\hline
+\zh{棱柱} & $S_\XB{侧}+2S_\XB{底}$
+  & $S_\XB{底} \times h_\XB{高}$ \\ \hline
+\zh{棱锥} & $S_\XB{侧}+S_\XB{底}$
+  & $\frac{1}{3} \times S_\XB{底} \times h_\XB{高}$ \\ \hline
+\zh{棱台} & $S_\XB{侧}+S_\XB{上底}+S_\XB{下底}$
+  & $\frac{1}{3}(S_\XB{上底}+S_\XB{下底}+\sqrt{S_\XB{上底}S_\XB{下底}})h_\XB{高}$ \\ \hline
+\zh{圆柱} & $2\pi r^2 + 2\pi rh$ & $\pi r^2 h$ \\ \hline
+\zh{圆锥} & $\pi r^2 + \pi rl$ & $\frac{1}{3}\pi r^2 h$ \\ \hline
+\zh{圆台} & $\pi (r_\XB{上底}^2 + r_\XB{下底}^2 + r_\XB{上底}l + r_\XB{下底}l)$ & $\frac{1}{3}\pi (r_\XB{上底}^2 + r_\XB{下底}^2 + r_\XB{上底} r_\XB{下底})h_\XB{高}$ \\ \hline
+\zh{球}   & $4\pi R^2$ & $\frac{4}{3}\pi R^3$ \\ \hline
+\multicolumn{3}{l}{\zh{斜二测所画图形面积}=\zh{原图形面积}$\times\frac{\sqrt 2}{4}$} \\ \hline
+\end{tabular}
+\end{table}
+% 
+\begin{table}[htb!]
+\centering
+\caption{Feature/Judge Theorem }
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{c}{\BT{线面平行}} &
+\multicolumn{1}{c}{\BT{线面垂直(两垂一相交)}} \\ \hline
+  $\left.\begin{aligned}
+    a \not\subset \alpha\\
+    b \subset \alpha\\
+    a // b
+  \end{aligned}\right\} \Longrightarrow a \| \alpha$
+& $\left.\begin{aligned}
+    a,b \subset \alpha\\
+    a \cap b = A\\
+    c \perp a, c \perp b\\
+  \end{aligned}\right\} \Longrightarrow c \perp \alpha$ \\ \hline
+\multicolumn{1}{c}{\BT{面面平行}} & 
+\multicolumn{1}{c}{\BT{面面垂直}} \\ \hline
+  $\left.\begin{aligned}
+    l_1,l_2 \subset \alpha, l_1 \cap l_2 = A\\
+    l_3,l_4 \subset \beta,  l_3 \cap l_4 = B\\
+    l_1 \| l_3, l_2 \| l_4\\
+   \end{aligned}\right\} \Longrightarrow \alpha \| \beta$
+& $\left.\begin{aligned}
+    c \subset \alpha\\
+    c \perp \beta
+\end{aligned}\right\} \Longrightarrow \alpha \perp \beta$ \\ \hline
+\end{tabular}
+\end{table}
+%
+\begin{figure}[b]
+\caption[MATH]{\YBao}
+\begin{minipage}{0.6\textwidth}
+\begin{tikzpicture} 
+  \def\clr{red}
+  \setcounter{count}{0}
+  \foreach \col in {1,...,9}
+  {
+    \foreach \row in {1,...,1}
+       {
+         \stepcounter{count}
+         \ifthenelse{\value{count}>3}{\def\clr{blue}}{}
+         \draw[fill=\clr] (\col,\row) ellipse (1cm and 1cm);
+       }
+  }
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.4\textwidth}
+  \includegraphics{ybao30.jpg}
+\end{minipage}
+\end{figure}
+%
+\end{minipage}\end{document}

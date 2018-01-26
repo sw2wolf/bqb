@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\pagestyle{empty}
+\pagecolor{white}
+\immediate\write18{pdflatex deri.tex}
+\immediate\write18{convert -density 100 -adaptive-resize 480x480 deri.pdf deri.jpg}
+\everymath{\displaystyle}
+\begin{document}
+\begin{minipage}[b][14cm][t]{1.00\textwidth}
+\begin{center}\textcolor{red}{\huge{Derivative Formula}}\end{center}
+\begin{Large}\begin{align*}
+&.\textcolor{blue}{definition:}f'(x)=\lim_{\Delta{x}\to{0}}\frac{f(x+\Delta{x})-f(x)}{\Delta{x}}\\
+&.\textcolor{blue}{calculation\hspace{3pt}principle}\\
+1&.(u\pm{v})' = u'\pm{v'}\\
+2&.(uv)' = u'v + uv'\hspace{1cm}\rightarrow(cf(x))'=c(f(x))'\\
+3&.(\frac{u}{v})' = \frac{u'v-uv'}{v^2}\\
+4&.(f(g(x))_x' = f'_{u}.u'_{x}\hspace{10pt}(u=g(x))\\
+&.\textcolor{blue}{common\hspace{3pt}formula}\\
+1&.C'=0\hspace{1cm}(x^n)'=nx^{n-1}\\
+2&.(a^x)'=a^xlna\hspace{1cm}\rightarrow(e^x)'=e^x\\
+3&.(\log_a^x)'=\frac{1}{xlna}\hspace{1cm}\rightarrow(lnx)'=\frac{1}{x}\\
+4&.(sinx)'=cosx\hspace{1cm}(cosx)'=-sinx\\
+5&.(tanx)'=\frac{1}{cos^2x}=sec^2x\hspace{10pt}(cotx)'=-\frac{1}{sin^2x}=-csc^2x
+\end{align*}\end{Large}
+\end{minipage}
+\end{document}

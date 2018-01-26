@@ -1,0 +1,19 @@
+%pdflatex -shell-escape *.tex
+\documentclass{standalone}
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+\usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{xcolor}
+%
+\pagestyle{empty}
+\pagecolor{white}
+%
+\everymath{\displaystyle}
+%
+\usepackage{CJKutf8}
+\AtBeginDvi{\input{zhwinfonts}}
+%\input{zhwinfonts}
+\newcommand{\zh}[1]{\begin{CJK*}{UTF8}{zhsong}#1\end{CJK*}}
+\newcommand{\YBao}{\color{red}\zh{源宝爱数学}}

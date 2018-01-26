@@ -1,0 +1,30 @@
+%pdflatex -shell-escape log.tex 
+\documentclass[12pt]{standalone}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\pagestyle{empty}
+\pagecolor{white}
+\immediate\write18{pdflatex log.tex}
+\immediate\write18{convert -density 200 -adaptive-resize 480x480 log.pdf log.jpg}
+\everymath{\displaystyle}
+\begin{document}
+\abovedisplayskip=12pt  
+\belowdisplayskip=12pt  
+\abovedisplayshortskip=0pt  
+\belowdisplayshortskip=7pt
+\begin{minipage}[b][12cm][t]{1.00\textwidth}
+\centering
+\textcolor{red}{\Large{Logarithm Formula}}
+\begin{Large}\begin{align*}
+1&.\log_b^{log_b^{a}}=a,a^{\frac{m}{n}}=\sqrt[n]{a^m}\\
+2&.\log_c^{(a\times{b})}=\log_c^{a}+\log_c^{b}\\
+3&.\log_c^{\frac{a}{b}}=\log_c^{a}-\log_c^{b}\\
+4&.\log_a^{b}=\frac{log_c^{a}}{log_c^{b}}\text{\textcolor{blue}(swap bottom)}\\
+=>\\
+5&.\log_a^b=\frac{1}{\log_b^a}\\
+6&.\log_{\textcolor{red}a}^b\times\log_b^c\times\log_c^{\textcolor{red}d}=\log_a^d\\
+7&.\log_{a^m}^{b^n}=\frac{n}{m}\log_a^b
+\end{align*}\end{Large}
+\end{minipage}
+\end{document}

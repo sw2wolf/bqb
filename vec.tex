@@ -1,0 +1,25 @@
+\input{header}
+\immediate\write18{pdflatex vec.tex}
+\immediate\write18{convert -density 100 -adaptive-resize 480x480 vec.pdf vec.jpg}
+%
+\begin{document}
+\begin{minipage}[b][14cm][t]{1.00\textwidth}
+\begin{center}\textcolor{red}{\huge{Vector Formula}}\end{center}
+\begin{Large}\begin{align*}
+&.\textcolor{blue}{suppose:}\vec{a}=(x_1,y_1),\vec{b}=(x_2,y_2)\\
+1&.|\vec{a}|=\sqrt{x_1^2+y_1^2}\hspace{1cm}(\text{\zh{模长}})\\
+2&.\vec{a}\pm\vec{b}=(x_1\pm{x_2},y_1\pm{y_2})\\
+3&.\lambda\vec{a}=(\lambda{x_1},\lambda{y_1})\\
+4&.\vec{a}\circ\vec{b}=|\vec{a}|\dot|\vec{b}|\cos<\vec{a},\vec{b}>=x_1x_2+y_1y_2\hspace{1cm}(\text{\zh{点乘}})\\
+5&.\vec{a}\times\vec{b}=x_1y_2-y_1x_2\hspace{1cm}(\text{\zh{叉乘}})\\
+\vspace{0.5cm} % A white space
+&.\textcolor{green}{Tips}\\
+&1.(\vec{a})^2=|\vec{a}|^2=x_1^2+y_1^2\\
+2&.\vec{a}//\vec{b}\hspace{3pt}(\text{\zh{共线}})\Leftrightarrow\exists{\lambda \in R}\text{\zh{使}}\vec{a}=\lambda\vec{b}\Leftrightarrow\vec{a}\times\vec{b}=0\\
+3&.\vec{a}\bot\vec{b}\Leftrightarrow\vec{a}\circ\vec{b}=0\\
+4&.|\vec{a}\circ\vec{b}|\leq|\vec{a}|.|\vec{b}|\Leftrightarrow |x_1x_2+y_1y_2|\leq\sqrt{x_1^2+y_1^2}+\sqrt{x_2^2+y_2^2}\hspace{1cm}(\text{\zh{柯西不等式}})\\
+5&.\text{\zh{若平面内A,B,C三点共线}}\Leftrightarrow\exists{\lambda,\mu \in R},\vec{OC}=\lambda\vec{OA}+\mu\vec{OB},where,\\
+&.\lambda+\mu=1,\text{O\zh{为平面内任意一点}}
+\end{align*}\end{Large}
+\end{minipage}
+\end{document}
