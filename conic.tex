@@ -1,0 +1,59 @@
+\input{header}
+\immediate\write18{pdflatex test.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 test.pdf test.jpg}
+%
+%\usepackage{pgfplots}
+%\pgfplotsset{width=100pt,compat=1.9}
+%\tikzset{inner sep=0pt}
+% 
+\usepackage{multirow}
+\newcommand{\BT}[1]{\color{red}\zh{#1}}
+\newcommand{\LT}[1]{\color{blue}\zh{#1}}
+% 
+\begin{document}\begin{minipage}[b][14cm][t]{1.00\textwidth}
+%
+\begin{table}[htb!]
+\centering
+\caption{Conic Section}
+\begin{tabular}{|c|c|c|}
+\hline
+  \multicolumn{3}{c}{\BT{椭圆:平面内一动点P到两定点F1,F2(焦点)的距离和=定长2a的点集合}} \\ \hline
+\LT{标准方程} & \LT{半焦距(c)} & \LT{离心率(e)} \\ \hline
+\begin{minipage}{0.5\columnwidth}
+  \zh{焦点在x轴上:}$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\hspace{5pt}(a>b)$\\
+  \zh{焦点在y轴上:}$\frac{y^2}{a^2}+\frac{x^2}{b^2}=1\hspace{5pt}(a>b)$
+\end{minipage}
+& $c^2 = a^2 - b^2$
+& $e=\frac{c}{a} \hspace{5pt}{(e < 1)}$ \\ \hline
+%
+\multicolumn{3}{c}{\BT{双曲线:平面内一动点P到两定点F1,F2(焦点)的距离差=定长2a的点集合}} \\ \hline
+\LT{标准方程} & \LT{半焦距(c)} & \LT{离心率(e)} \\ \hline
+\begin{minipage}{0.5\columnwidth}
+  \zh{焦点在x轴上:}$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$ \\
+  \zh{焦点在y轴上:}$\frac{y^2}{a^2}-\frac{x^2}{b^2}=1$
+\end{minipage}
+& $c^2 = a^2 + b^2$
+& $e=\frac{c}{a} \hspace{5pt}{(e > 1)}$ \\ \hline
+% 
+\multicolumn{3}{c}{\BT{抛物线:平面内一动点P到一定点F与一条定直线(准线)的距离之比=1的点集合}} \\ \hline
+\LT{标准方程} & \LT{半焦距(c)} & \LT{离心率(e)} \\ \hline 
+\begin{minipage}{0.5\columnwidth}
+  \zh{焦点在x轴上:}$y^2 = \pm 2px$ \\
+  \zh{焦点在y轴上:}$x^2 = \pm 2px$
+\end{minipage}
+& $c = |\frac{2p}{4}|$
+& $e = 1$ \\ \hline
+\end{tabular}
+\end{table}
+%
+\begin{table}[htb!]
+\centering
+\caption{Review it carefully !}
+\begin{tabular}{ll}
+  \includegraphics{conic.jpg}
+&
+  \includegraphics{ybao30.jpg}
+\end{tabular}
+\end{table}
+%%%
+\end{minipage}\end{document}
