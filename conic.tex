@@ -1,6 +1,6 @@
 \input{header}
-\immediate\write18{pdflatex test.tex}
-\immediate\write18{convert -density 150 -adaptive-resize 480x480 test.pdf test.jpg}
+\immediate\write18{pdflatex conic.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 conic.pdf conic.jpg}
 %
 %\usepackage{pgfplots}
 %\pgfplotsset{width=100pt,compat=1.9}
@@ -12,12 +12,12 @@
 % 
 \begin{document}\begin{minipage}[b][14cm][t]{1.00\textwidth}
 %
-\begin{table}[htb!]
+%\begin{table}[htb!]
+\begin{minipage}{\linewidth}
 \centering
-\caption{Conic Section}
 \begin{tabular}{|c|c|c|}
-\hline
-  \multicolumn{3}{c}{\BT{椭圆:平面内一动点P到两定点F1,F2(焦点)的距离和=定长2a的点集合}} \\ \hline
+\multicolumn{3}{c}{\Large\BT{园锥曲线:(Conic Section)}} \\[5pt] \hline
+\multicolumn{3}{l}{\BT{椭圆:平面内一动点P到两定点F1,F2(焦点)的距离和=定长2a的点集合}} \\ \hline
 \LT{标准方程} & \LT{半焦距(c)} & \LT{离心率(e)} \\ \hline
 \begin{minipage}{0.5\columnwidth}
   \zh{焦点在x轴上:}$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\hspace{5pt}(a>b)$\\
@@ -43,17 +43,15 @@
 \end{minipage}
 & $c = |\frac{2p}{4}|$
 & $e = 1$ \\ \hline
-\end{tabular}
-\end{table}
+\end{tabular}\end{minipage} \\[7pt]
 %
-\begin{table}[htb!]
+\begin{minipage}{\linewidth}
 \centering
-\caption{Review it carefully !}
 \begin{tabular}{ll}
-  \includegraphics{conic.jpg}
+\multicolumn{2}{c}{\Large\BT{功德圆满，心想事成}} \\ \hline
+\includegraphics{conic_1.jpg}
 &
-  \includegraphics{ybao30.jpg}
-\end{tabular}
-\end{table}
+\includegraphics{ybao30.jpg}
+\end{tabular}\end{minipage}
 %%%
 \end{minipage}\end{document}
