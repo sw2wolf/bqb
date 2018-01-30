@@ -4,22 +4,18 @@
 \immediate\write18{convert -density 150 -adaptive-resize 480x480 vol.pdf vol.jpg}
 %
 \newcommand{\XB}[1]{\text{\zh{#1}}}
-\newcommand{\BT}[1]{\color{red}\zh{#1}}
 % 
 \usepackage{multirow}
-\usepackage{tikz}
-\usetikzlibrary{math}
-\usepackage{ifthen}
-\newcounter{count}
+\usepackage{pgfplots}
+\pgfplotsset{width=100pt,compat=1.9}
+% 
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
 %
-\begin{document}\begin{minipage}[b][14cm][t]{1.00\textwidth}
-%
-\begin{table}[]
+\begin{minipage}{\linewidth}
 \centering
-\caption{Surface area and Volume}
 \begin{tabular}{|c|l|l|}
-\hline
-\BT{几何体} & \multicolumn{1}{c}{\BT{表面积}} & \multicolumn{1}{c}{\BT{体积}} \\\hline
+\multicolumn{3}{c}{\Large\BT{面积与体积:(Area \& Volumn)}} \\[5pt] \hline
+\BT{几何体} & \multicolumn{1}{c}{\BT{表面积}} & \multicolumn{1}{c}{\BT{体积}} \\ \hline
 \zh{棱柱} & $S_\XB{侧}+2S_\XB{底}$
   & $S_\XB{底} \times h_\XB{高}$ \\ \hline
 \zh{棱锥} & $S_\XB{侧}+S_\XB{底}$
@@ -31,14 +27,12 @@
 \zh{圆台} & $\pi (r_\XB{上底}^2 + r_\XB{下底}^2 + r_\XB{上底}l + r_\XB{下底}l)$ & $\frac{1}{3}\pi (r_\XB{上底}^2 + r_\XB{下底}^2 + r_\XB{上底} r_\XB{下底})h_\XB{高}$ \\ \hline
 \zh{球}   & $4\pi R^2$ & $\frac{4}{3}\pi R^3$ \\ \hline
 \multicolumn{3}{l}{\zh{斜二测所画图形面积}=\zh{原图形面积}$\times\frac{\sqrt 2}{4}$} \\ \hline
-\end{tabular}
-\end{table}
-% 
-\begin{table}[htb!]
+\end{tabular}\end{minipage} \\[7pt]
+%%%
+\begin{minipage}{\linewidth}
 \centering
-\caption{Feature/Judge Theorem }
 \begin{tabular}{|l|l|}
-\hline
+\multicolumn{2}{c}{\Large\BT{判定、性质定理}} \\ \hline
 \multicolumn{1}{c}{\BT{线面平行}} &
 \multicolumn{1}{c}{\BT{线面垂直(两垂一相交)}} \\ \hline
   $\left.\begin{aligned}
@@ -62,29 +56,29 @@
     c \subset \alpha\\
     c \perp \beta
 \end{aligned}\right\} \Longrightarrow \alpha \perp \beta$ \\ \hline
-\end{tabular}
-\end{table}
-%
-\begin{figure}[b]
-\caption[MATH]{\YBao}
-\begin{minipage}{0.6\textwidth}
-\begin{tikzpicture} 
-  \def\clr{red}
-  \setcounter{count}{0}
-  \foreach \col in {1,...,9}
-  {
-    \foreach \row in {1,...,1}
-       {
-         \stepcounter{count}
-         \ifthenelse{\value{count}>3}{\def\clr{blue}}{}
-         \draw[fill=\clr] (\col,\row) ellipse (1cm and 1cm);
-       }
-  }
+\end{tabular}\end{minipage} \\[7pt] 
+%%%
+\begin{minipage}{\linewidth}
+\centering
+\begin{tabular}{ll}
+\multicolumn{2}{c}{\BT{爱你(Love You)}}\\ \hline
+\begin{tikzpicture}
+\begin{axis}[
+    %title=Exmple using the mesh parameter,
+    hide axis,
+    colormap/cool,
+]
+\addplot3[
+    mesh,
+    samples=50,
+    domain=-8:8,
+]
+{sin(deg(sqrt(x^2+y^2)))/sqrt(x^2+y^2)};
+%\addlegendentry{$\frac{sin(r)}{r}$}
+\end{axis}
 \end{tikzpicture}
-\end{minipage}
-\begin{minipage}{.4\textwidth}
+&
   \includegraphics{ybao30.jpg}
-\end{minipage}
-\end{figure}
+\end{tabular}\end{minipage}
 %
 \end{minipage}\end{document}
