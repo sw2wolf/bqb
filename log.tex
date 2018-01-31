@@ -1,30 +1,27 @@
-%pdflatex -shell-escape log.tex 
-\documentclass[12pt]{standalone}
-\usepackage{xcolor}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\pagestyle{empty}
-\pagecolor{white}
+\input{header}
 \immediate\write18{pdflatex log.tex}
 \immediate\write18{convert -density 200 -adaptive-resize 480x480 log.pdf log.jpg}
-\everymath{\displaystyle}
-\begin{document}
-\abovedisplayskip=12pt  
-\belowdisplayskip=12pt  
-\abovedisplayshortskip=0pt  
-\belowdisplayshortskip=7pt
-\begin{minipage}[b][12cm][t]{1.00\textwidth}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
 \centering
-\textcolor{red}{\Large{Logarithm Formula}}
-\begin{Large}\begin{align*}
+\Large\BT{对数:(Logarithm)}
+\color{blue}\begin{Large}\begin{align*}
 1&.\log_b^{log_b^{a}}=a,a^{\frac{m}{n}}=\sqrt[n]{a^m}\\
 2&.\log_c^{(a\times{b})}=\log_c^{a}+\log_c^{b}\\
 3&.\log_c^{\frac{a}{b}}=\log_c^{a}-\log_c^{b}\\
-4&.\log_a^{b}=\frac{log_c^{a}}{log_c^{b}}\text{\textcolor{blue}(swap bottom)}\\
-=>\\
+4&.\log_a^{b}=\frac{log_c^{a}}{log_c^{b}}\text{\color{red}\zh{(换底公式)}} \hspace{1cm}\Longrightarrow \\
 5&.\log_a^b=\frac{1}{\log_b^a}\\
 6&.\log_{\textcolor{red}a}^b\times\log_b^c\times\log_c^{\textcolor{red}d}=\log_a^d\\
 7&.\log_{a^m}^{b^n}=\frac{n}{m}\log_a^b
-\end{align*}\end{Large}
-\end{minipage}
-\end{document}
+\end{align*}\end{Large} \\[3pt]
+%
+\begin{minipage}{\linewidth}
+\centering
+\begin{tabular}{ll}
+  \multicolumn{1}{c}{\Large\BT{治大国若烹小鲜,复杂的事情简单做}} &
+  \includegraphics{ybao30.jpg} \\ \hline
+\includegraphics[scale=0.6]{log_1.png} &
+\includegraphics[scale=0.8]{log_2.png}
+\end{tabular}\end{minipage}
+%%%
+\end{minipage}\end{document}
