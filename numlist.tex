@@ -2,9 +2,10 @@
 \immediate\write18{pdflatex numlist.tex}
 \immediate\write18{convert -density 200 -adaptive-resize 480x480 numlist.pdf numlist.jpg}
 %
-\begin{document}\begin{minipage}[b][14cm][t]{1.00\textwidth}
-\begin{center}\textcolor{red}{\huge{Number List}}\end{center}
-\begin{Large}\begin{align*}
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+\centering
+\Large\BT{数列:(sequence of number)}
+\color{black}\begin{Large}\begin{align*}
 &.\text{\color{blue}\zh{数列}}\{a_n\}\hspace{1cm}S_1=a_1,S_n-S_{n-1}=a_n\hspace{10pt}(n\ge 2)\\
 &.\text{\color{blue}\zh{等差数列}}\{a_n\}\hspace{1cm}a_n=a_1+(n-1)d\\
 S_n &= \frac{n(a_1+a_n)}{2}=na_1+\frac{n(n-1)}{2}d\\
