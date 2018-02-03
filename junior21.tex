@@ -1,15 +1,27 @@
 \input{header}
 \immediate\write18{pdflatex junior21.tex}
+<<<<<<< HEAD
 \immediate\write18{convert -density 150 -adaptive-resize 600x600 junior21.pdf junior21.jpg}
 %
 \newcommand{\fTxT}[1]{\text{\zh{#1}}}
 %
 \begin{document}\begin{minipage}[b][19cm][t]{\textwidth}
+=======
+\immediate\write18{convert -density 200 -adaptive-resize 480x480 junior21.pdf junior21.jpg}
+%
+\newcommand{\fTxT}[1]{\text{\zh{#1}}}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+>>>>>>> 38a6adcd9f293c676d0fcb95f04cbea0d269a10e
 \begin{center}\large\BT{高二下学期末数学考式21题}\end{center}
 \begin{large}
 \zh{已知椭圆C:$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\hspace{3pt}(a>b>0)$的离心率为$\frac{\sqrt{2}}{2}$,点$P(1,\frac{\sqrt{2}}{2})$在椭圆C上,直线l过椭圆的右焦点F且与椭圆相交于A,B两点}   \\
 \zh{(1)求椭圆C的方程;}\\
+<<<<<<< HEAD
 \zh{(2)在x轴上是否存在定点M,使得$\vec{MA}\cdot\vec{MB}$为定值? 若存在,求出定点M的坐标;若不存在,请说明理由.}
+=======
+\zh{(2)在x轴上是否存在定点M,使得$\vec{MA}\dot\vec{MB}$为定值? 若存在,求出定点M的坐标;若不存在,请说明理由.}
+>>>>>>> 38a6adcd9f293c676d0fcb95f04cbea0d269a10e
 \end{large}\\[10pt]
 %%%
 \begin{large}(1)\zh{解:}$\because$ $\left.\begin{aligned}
@@ -21,6 +33,7 @@ $\therefore a=\sqrt{2},b=1 \Rightarrow C:\frac{x^2}{2}+y^2=1$
 \end{large}\\[10pt]
 %%%
 \begin{large}(2)\zh{解:}
+<<<<<<< HEAD
 \zh{由(1)知F(1,0),可设}\zh{l:y=k(x-1),A(x1,y1),B(x2,y2),M(x,0)} \\
 \zh{联立:}$\begin{cases}
   y=k(x-1) \\
@@ -39,6 +52,8 @@ $\Rightarrow \begin{cases}
   X_0^2-2=V
 \end{cases}$ $\Rightarrow x_0=\frac{5}{4},V=-\frac{7}{16}$\\
 $\therefore \exists M(\frac{5}{4},0) \rightarrow \vec{MA}\cdot\vec{MB}=-\frac{7}{16}$
+=======
+>>>>>>> 38a6adcd9f293c676d0fcb95f04cbea0d269a10e
 \end{large}
 %%%
 \end{minipage}\end{document}
