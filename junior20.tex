@@ -1,0 +1,28 @@
+\input{header}
+\immediate\write18{pdflatex junior20.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 junior20.pdf junior20.jpg}
+%
+\newcommand{\fTxT}[1]{\text{\zh{#1}}}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+\begin{center}\large\BT{高二下学期末数学考试20题}\end{center}
+\color{black}\begin{large}
+\zh{已知等差数列$\{a_n\}$满足:$a_3=7,a_5+a_7=26.\{a_n\}$的前n项和为$S_n.$}\\
+\zh{(1)求$a_n$及$S_n$};\\
+\zh{(2)令$b_n=\frac{1}{a_n^2-1}\hspace{5pt}(n \in N^*)$求数列$\{b_n\}$的前n项和$T_n$}
+\end{large}\\[10pt]
+%%%
+\begin{large}(1)\zh{解:}
+\zh{设$\{a_n\}$公差为d}\\
+$\Longrightarrow \begin{cases}
+  a_3=a_1+2d=7 \\
+  a_5+a_7=2a_1+10d=26
+\end{cases}$ $\Rightarrow a_1=3,d=2$\\
+$\therefore a_n=3+2(n-1)=2n+1,S_n=3n+\frac{n(n-1}{2} \times 2=n^2+2n$
+\end{large}\\[10pt]
+%%% 
+\begin{large}(2)\zh{解:}
+  $\because b_n=\frac{1}{(a_n+1)(a_n-1)}=\frac{1}{4}(\frac{1}{n}-\frac{1}{n+1})$\\
+  $\therefore T_n=\frac{1}{4}(1-\frac{1}{2}+\frac{1}{2}-\frac{1}{3} \dots \frac{1}{n}-\frac{1}{n+1})=\frac{1}{4}(1-\frac{1}{n+1})=\frac{1}{4} \times \frac{n}{n+1}$
+\end{large}
+\end{minipage}\end{document}

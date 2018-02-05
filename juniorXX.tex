@@ -1,0 +1,20 @@
+\input{header}
+\immediate\write18{pdflatex junior99.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 junior99.pdf junior99.jpg}
+%
+\newcommand{\fTxT}[1]{\text{\zh{#1}}}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+\begin{center}\large\BT{高二下学期末数学考试99题}\end{center}
+\color{black}\begin{large}
+\zh{}\\
+\zh{(1)}\\
+\zh{(2)}
+\end{large}\\[10pt]
+%%%
+\begin{large}(1)\zh{解:}
+\end{large}\\[10pt]
+%%% 
+\begin{large}(2)\zh{解:}
+\end{large}
+\end{minipage}\end{document}
