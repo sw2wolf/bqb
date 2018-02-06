@@ -1,0 +1,35 @@
+\input{header}
+\immediate\write18{pdflatex junior19.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 junior19.pdf junior19.jpg}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+\begin{center}\large\BT{高二下学期末数学考试19题}\end{center}
+\begin{large}
+\zh{在交通繁忙时段内,某公路汽车的车流量y(千辆/h)与汽车的平均速度v(km/h)的函数关系为$y=\frac{920v}{v^2+3v+1600}\hspace{5pt}(v>0)$}\\
+\zh{(1)在该段时间内,当汽车的平均速度v为多少时,车流量最大?最大车流量为多少?(精确到0.1千辆/h)}\\
+\zh{(2)若要求在该时段内流量超过10千辆/h,则汽车的平均速度应在什么范围内?}
+\end{large}\\[10pt]
+%%%
+\begin{large}(1)\zh{解:}
+\zh{由}$\begin{aligned}
+    y_x' &= \frac{920(v^2+3v+1600)-920v(2v+3)}{(v^2+3v+1600)^2} \\
+         &= \frac{-920v^2+920 \times 1600}{(v^2+3v+1600)^2} = 0
+\end{aligned}$ \\
+$\Longrightarrow -920v^2+920 \times 1600=0$\\
+$\Longrightarrow v=40$ \\
+\zh{令}$g(v)=-920v^2+920 \times 1600 \Longrightarrow $ $\begin{cases}
+  v \in (0,40),y_v'>0 \rightarrow y \uparrow \\
+  v \in (40,+\infty),y_v'<0 \rightarrow y \downarrow
+\end{cases}$ \\
+$\therefore y_{max}=y(40)=\frac{920 \times 40}{40^2+3 \times 40 + 1600} \approx 11.1\fTxT{(千辆/h)}$
+\end{large}\\[5pt]
+%%% 
+\begin{large}(2)\zh{解:}
+\zh{联立}$\begin{cases}
+  y=10 \\
+  y=\frac{920v}{v^2+3v+1600}
+\end{cases} \Longrightarrow v^2-89v+1600=0$\\
+$\Longrightarrow v1=25,v2=64$\\
+$\therefore v \in (25,64)\fTxT{时},\fTxT{流量超过10千辆/h}$
+\end{large}
+\end{minipage}\end{document}

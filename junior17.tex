@@ -1,0 +1,20 @@
+\input{header}
+\immediate\write18{pdflatex junior17.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 junior17.pdf junior17.jpg}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+\begin{center}\large\BT{高二下学期末数学考试17题}\end{center}
+\begin{large}
+\zh{已知命题$p:x^2-x \ge 6,q:x \in Z$, $p \wedge q$与$\neg q$都为假命题,求x的值}\\
+\end{large}\\[5pt]
+%%%
+\begin{large}\zh{解:}
+\zh{设True:真命题,\hspace{10pt}False:假命题}\\
+$\because \neg q=False \therefore q=True$\\
+$\because p \wedge q = False \therefore p=False$ \\
+$\Longrightarrow x^2 - x < 6 \Rightarrow (x-3)(x+2)<0$ \\
+$\Longrightarrow \begin{cases} x-3>0 \\ x+2 < 0 \end{cases} OR \hspace{10pt} \begin{cases} x-3<0 \\ x+2>0\end{cases}$ \\
+$\Longrightarrow x \in (-2,3)$
+\end{large}
+%%% 
+\end{minipage}\end{document}

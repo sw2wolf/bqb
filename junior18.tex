@@ -1,0 +1,32 @@
+\input{header}
+\immediate\write18{pdflatex junior18.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 junior18.pdf junior18.jpg}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+\begin{center}\large\BT{高二下学期末数学考试18题}\end{center}
+\begin{large}
+\zh{已知$\triangle ABC$中,角A,B,C的对边分别为a,b,c,其中$a=3,b=2\sqrt{6},B=2A$}\\
+\zh{(1)求$\cos A$的值}\\
+\zh{(2)求c的值}
+\end{large}\\[10pt]
+%%%
+\begin{large}(1)\zh{解:}
+$\because B=2A \therefore A \in (0,\frac{\pi}{2}) \Rightarrow \sin A>0,\cos A>0$\\
+\zh{由正弦定理}
+$\Rightarrow \frac{a}{\sin A}=\frac{b}{\sin B}
+\Rightarrow \frac{3}{\sin A}=\frac{2 \sqrt{6}}{\sin 2A}$ \\
+$\Rightarrow \frac{3}{\sin A}=\frac{2 \sqrt{6}}{2\sin A \cos A}$
+$\Rightarrow \cos A=\frac{\sqrt{6}}{3}$
+\end{large}\\[10pt]
+%%% 
+\begin{large}(2)\zh{解:}
+$\fTxT{由(1)}\Rightarrow \sin A=\sqrt{1-\cos^2 A}=\frac{\sqrt{3}}{3}$\\
+$\cos 2A=2\cos^2 A-1=\frac{1}{3} \Rightarrow \sin 2A=\frac{2}{3}\sqrt{2}$\\
+$\Rightarrow \cos C=\cos [\pi-(A+B)]=-\cos (A+B)=-\cos (A+2A)$ \\
+$\Rightarrow \cos C=\sin A \sin 2A - \cos A \cos 2A=\frac{\sqrt{3}}{3} \times \frac{2\sqrt{2}}{3} - \frac{\sqrt{6}}{3} \times \frac{1}{3}=\frac{\sqrt{6}}{9}$\\
+\zh{由余弦定理}
+$\Rightarrow c^2=a^2+b^2-2ab\cos C$\\
+$\Rightarrow c^2=3^2+(2\sqrt{6})^2-2 \times 3 \times 2\sqrt{6} \times \frac{\sqrt{6}}{9} = 25$ \\
+$\therefore c=5$
+\end{large}
+\end{minipage}\end{document}
