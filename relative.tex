@@ -1,0 +1,30 @@
+\input{header}
+\immediate\write18{pdflatex relative.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 relative.pdf relative.jpg}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+\begin{center}\large\BT{统计：线性相关}\end{center}
+\begin{large}
+\zh{已知$X=\{x_i\},Y=\{y_i\}(i=1 \cdots n)$中$x_i,y_i$不全为零。$s_x,s_y$分别为X，Y的\textbf{标准差}；$\overline{x},\overline{y}$分别为X，Y的\textbf{平均值}。则：}\\
+$\overline{x}=\frac{\sum_{i=1}^{n}x_i}{n} \hspace{1cm} \overline{y}=\frac{\sum_{i=1}^{n}y_i}{n}$\\
+$s_x=\sqrt{\sum_{i=1}^{n}(x_i-\overline{x})^2} \hspace{1cm} s_y=\sqrt{\sum_{i=1}^{n}(y_i-\overline{y})^2} \hspace{1cm}\Longrightarrow$\\
+\[
+  r_{xy} = \frac{\sum_{i=1}^{n}(x_i-\overline{x})(y_i-\overline{y})}{\sqrt{\sum_{i=1}^{n}(x_i-\overline{x})^2 \sum_{i=1}^{n}(y_i-\overline{y})^2}}
+\]
+\[
+  = \frac{\sum_{i=1}^{n}x_i y_i - n\overline{x}\overline{y}}{(\sum_{i=1}^{n}x_i^2-n\overline{x}^2) (\sum_{i=1}^{n}y_i^2-n\overline{y}^2)}
+\]\\
+\zh{$r_{xy}$为变量X，Y的\textbf{相关系数}}\\
+1.$r_{xy} > 0$,\zh{X与Y正相关}\\
+2.$r_{xy} < 0$,\zh{X与Y负相关}\\
+3.$r_{xy} = 0$,\zh{X与Y不相关} \\[10pt]
+\zh{若X，Y\textbf{线性相关}，则可设$y=a+bx \hspace{1cm} \Longrightarrow$}\\
+\[
+  b=\frac{\sum_{i=1}^{n}x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}^{n}x_i^2 - n\overline{x}^2}
+\]
+\[
+  a=\overline{y}-b\overline{x}
+\]
+\end{large}
+%%% 
+\end{minipage}\end{document}
