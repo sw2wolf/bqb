@@ -3,38 +3,56 @@
 \immediate\write18{convert -density 150 -adaptive-resize 480x480 complex.pdf complex.jpg}
 %%%
 \usepackage{tikz,pgfplots}
+\usetikzlibrary{shapes.geometric}
+%\pgfplotsset{compat=newest}
 % \pgfplotsset{height=100pt,compat=1.9}
 %\usetikzlibrary{circuits.logic.US,circuits.logic.IEC}
 %\usepackage{multirow}
 %%%
-%\usepackage{makecell}
 \usepackage{tabularx}
 %%%
 \begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
 \begin{center}\Large\BT{复数}\end{center}
 % \begin{tabular}{c|l}
 \begin{tabularx}{\textwidth}{lX}
-\begin{tikzpicture}[baseline=100]\begin{axis}[
+\begin{tikzpicture}[baseline=100]
+\tikzset{myarrow/.style=
+         {sloped,isosceles triangle,anchor=apex,fill=black,inner sep=1pt}}
+  \begin{axis}[
   width=0.5\textwidth,height=0.4\textwidth,
-  axis x line=bottom,xmin=0, xmax=10,
-  xlabel={$x$},xlabel near ticks,%xticklabel style={/pgf/number format/1000 sep=},
-  axis y line=left,ymin=0, ymax=10,
-  ylabel={$y$}, ylabel near ticks,
+  axis x line=center,xmin=-2, xmax=10,
+  % xlabel={$x$},xlabel near ticks,
+  xlabel={},xtick=\empty,
+  axis y line=center,ymin=-2, ymax=10,
+  % ylabel={$y$}, ylabel near ticks,
+  ylabel={},ytick=\empty,
   %axis on top=true,
   %axis lines=center,
   %xtick={-5,-4,...,5}, ytick={-5,-4,...,5},   
-  %xlabel style={below right}, ylabel style={above left},  
+  %xlabel style={below right}, ylabel style={above left},
+  % after end axis/.code={
+  %              \draw[red,->] (axis cs:3,3) -- (axis cs:4,4);
+  %            }
   ]
-  %\addplot[orange,domain=-\num:\num]{sin(deg(x))}
-  \addplot [red,domain=0:4] {x};\addlegendentry{$z=a+bi$}
-  \addplot [smooth,color=blue] plot coordinates {
+  \addplot [->,red,domain=0:4] {x}
+  %node[pos=1.0,myarrow,fill=red,opacity=0.75,text opacity=1]{www}
+  %node[pos=0.4,myarrow,rotate=180]{}
+  % node[myarrow,fill=red] at (axis cs:4,4){w}
+  ;\addlegendentry{$z=a+bi$}
+%
+  \addplot [dashed,color=blue] plot coordinates {
         (4,0)
         (4,4)
-    };
-  \end{axis}\end{tikzpicture} &
+      } ;
+  \addplot [dashed,color=blue] plot coordinates {
+        (0,4)
+        (4,4)
+      } ;
+  \node[red,above] at (axis cs:4,4){\small{z}};
+  \node[red,left] at (axis cs:0,4){\small{b}};
+  \node[red,below] at (axis cs:4,0){\small{a}};
+\end{axis}\end{tikzpicture} &
 \begin{large}\zh{i:虚数单位\color{red}$(i^2=-1)$\color{black}} \newline \zh{a:实部,b:虚部,$(a,b \in R)$} \newline \zh{模: $|z|=\sqrt{a^2+b^2}$} \newline \zh{共轭复数:$\overline{z}=a-bi$} \newline $a+bi=c+di \Leftrightarrow a=c,b=d$\end{large}
-
-%\begin{large}\makecell{\zh{i:虚数单位\color{red}$(i^2=-1)$\color{black}} \\ \zh{a:实部,b:虚部,$(a,b \in R)$} \\ \zh{模: $|z|=\sqrt{a^2+b^2}$} \\ \zh{共轭复数:$\overline{z}=a-bi$} \\ $a+bi=c+di \Leftrightarrow a=c,b=d$}\end{large}
 \\ \hline
 \end{tabularx}
 %\end{tabular}\\
