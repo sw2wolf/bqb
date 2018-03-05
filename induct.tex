@@ -1,0 +1,19 @@
+\input{header}
+\immediate\write18{pdflatex induct.tex}
+\immediate\write18{convert -density 150 -adaptive-resize 480x480 induct.pdf induct.jpg}
+%
+\begin{document}\begin{minipage}[b][14cm][t]{\textwidth}
+\begin{center}\large\BT{高中数学:数学归纳法}\end{center}
+\begin{large}
+\zh{数学归纳法\textit{(mathematical induction)}是一种数学证明方法，常用于证明命题在自然数范围内成立。虽然数学归纳法名字中有“归纳”，但是数学归纳法并非不严谨的归纳推理法，它属于完全严谨的演绎推理法。}\\[5pt]
+\zh{如果想要证明某个命题对于\textbf{所有自然数n}都成立，那么:}\\[3pt]
+\zh{一: 证明命题对于n = 1成立}\\
+\zh{二: 假设命题对于任意自然数m成立，证明在此假设下，命题对于m+1成立}\\
+\zh{三: 命题得证。$\Longrightarrow$} \\[7pt]
+%
+\color{blue}\zh{n=1成立\hspace{5pt}$\Rightarrow$\hspace{5pt}n=2成立\hspace{5pt}$\cdots$\hspace{5pt}n=m成立\hspace{5pt}$\Rightarrow$\hspace{5pt}n=m+1成立\hspace{5pt}$\cdots$}\color{black} \\[7pt]
+%
+\zh{这就好像\textbf{多米诺骨牌}，当确定第n块骨牌的倒下会导致第n+1块骨牌的倒下后，推倒第一块骨牌，就能保证所有骨牌的倒下。}
+\end{large}
+%%%
+\end{minipage}\end{document}
